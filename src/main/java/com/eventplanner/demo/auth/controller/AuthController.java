@@ -12,7 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RestController
 public class AuthController {
 
-  @PostMapping("path")
+  @GetMapping("/")
+  public String getMethodName() {
+    return "Backend works";
+  }
+
+  @PostMapping("/login")
   public String postMethodName(@RequestBody UserCredentials userCredentials) {
     return "Some jwt for user " + userCredentials.getEmail();
   }
